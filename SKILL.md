@@ -1,18 +1,41 @@
 ---
 name: app-architect
 description: |
-  도메인 입력→성공앱 패턴매칭→서비스설계→와이어프레임HTML 산출. 28도메인×190+앱 패턴DB 기반 플랫폼 목업 빌더.
-  P1: 앱설계, 앱기획, 앱아키텍트, 플랫폼설계, 서비스설계, 앱목업, 와이어프레임, 화면설계, 앱빌더, 서비스기획.
-  P2: 설계해줘, 기획해줘, 목업만들어줘, design app, build mockup.
-  P3: app architecture, platform design, wireframe, service blueprint, UX pattern.
-  P4: 새 앱 만들 때, 플랫폼 기획할 때, MVP 설계할 때.
+  App Architect v1.1. 도메인→패턴매칭→설계→UX_CHECKLIST→와이어프레임HTML. 28도메인×190+앱 패턴DB. 일반/TURBO 2모드.
+  P1: 앱설계, 앱기획, 앱아키텍트, 플랫폼설계, 서비스설계, 앱목업, 와이어프레임, 화면설계, 앱빌더, 서비스기획, 터보앱설계, TURBO.
+  P2: 설계해줘, 목업만들어줘, design app, build mockup.
+  P3: app architecture, wireframe, service blueprint, turbo design.
   P5: .html로, .md로, 와이어프레임으로.
-  NOT: 단일화면UI(→ui-action-designer), 사업전략(→biz-skill), 사업계획서(→bp-guide), 재무모델(→financial-model), 디자인스타일(→design-skill).
+  NOT: 단일화면UI(→ui-action-designer), 사업전략(→biz-skill), BP(→bp-guide), 재무(→financial-model), 디자인(→design-skill).
+"@uses":
+  - references/tokens.md
+  - references/snippets.md
+  - references/forbidden.md
+  - references/qc.md
+  - references/domain-patterns.md
+  - references/beyond-patterns.md
+  - references/ux-principles.md
 ---
-
 # App Architect
 
+앱설계·앱기획·앱아키텍트·플랫폼설계·서비스설계·앱목업·화면설계·앱빌더·서비스기획·터보앱설계 — 도메인 패턴 매칭 기반 와이어프레임 빌더.
+
 사업방향 입력 → 도메인 패턴 매칭 → 기존을 초월하는 서비스 설계 → 와이어프레임 HTML 산출.
+
+---
+
+## 4블록 참조 구조
+
+html-skill-refactor spine 공통. 허브형 스킬이라 **4블록=인덱스**, 풀스펙은 기존 3 스포크에 유지.
+
+| 블록 | 역할 | 로드 시점 |
+|------|------|-----------|
+| `references/tokens.md` | 4축·진보 매트릭스·UX_CHECKLIST 5·HTML 토큰·도메인 라우팅 | ②·③ 진입시 |
+| `references/snippets.md` | 단계별 스포크 매핑·입력 3분기·HTML 스니펫·한글 더미 | ①~④ 전단계 |
+| `references/forbidden.md` | 절대 규칙 6·UX FAIL·더미·HTML·도메인·TURBO·로딩 금지 | 전단계 |
+| `references/qc.md` | 절대 규칙 6·UX 5원리·HTML·블루프린트·매트릭스·TURBO·설치 QC | ③-b·④ |
+
+**로딩 규칙:** 4블록은 **인덱스**. 실제 상세는 기존 3 스포크(domain-patterns·beyond-patterns·ux-principles)로 위임.
 
 ---
 
@@ -133,49 +156,39 @@ C. "~문제를 해결하는 앱" → 문제→도메인 추론. 가장 가까운
 
 ## 도메인 자동 매칭 테이블
 
-| 키워드 | 매칭 도메인 |
-|--------|-----------|
-| 숙박, 호텔, 여행, 투어 | 숙박/여행 |
-| SNS, 소셜, 피드, 팔로우 | 소셜미디어 |
-| 쇼핑, 판매, 상품, 커머스 | 이커머스 |
-| 결제, 송금, 은행, 투자 | 핀테크 |
-| 택시, 라이드, 킥보드, 이동 | 모빌리티 |
-| 건강, 의료, 명상, 수면 | 건강/웰니스 |
-| 학습, 강의, 교육, 튜터 | 교육 |
-| 업무, 프로젝트, 노트, 협업 | 생산성 |
-| 배달, 음식, 레스토랑 | 음식배달 |
-| 영상, 음악, 스트리밍 | 엔터테인먼트 |
-| 중고, 거래, 직거래 | 마켓플레이스 |
-| 채팅, 메시지, 통화 | 메시징 |
-| 집, 부동산, 임대, 매매 | 부동산 |
-| 데이트, 만남, 소개팅 | 데이팅 |
-| CRM, SaaS, 기업, B2B | SaaS/B2B |
-| 블로그, 뉴스레터, 콘텐츠 | 콘텐츠/미디어 |
-| 게임, 배틀, RPG | 게임 |
-| 운동, 피트니스, 헬스 | 피트니스 |
-| AI, 챗봇, 생성형 | AI/챗봇 |
-| 예약, 미용실, 병원예약 | O2O/로컬서비스 |
-| 육아, 아이, 키즈 | 육아/키즈 |
-| 반려동물, 펫, 강아지 | 펫 |
-| 채용, 구직, 이력서 | 구인구직 |
-| 물류, 배송, 택배 | 물류/배송 |
-| 보험, 인슈어테크 | 보험 |
-| 장보기, 마트, 퀵커머스 | 그로서리 |
-| 예약, 스케줄, 캘린더 | 예약/스케줄링 |
-| 코인, NFT, 지갑, 블록체인 | 크립토/Web3 |
+28도메인 키워드→도메인 라우팅 → `references/tokens.md §6`
 
 ---
+
+## TURBO 모드
+
+**트리거:** "터보로 설계" · "TURBO" · "앱 아키텍트 터보" 명시.
+
+**불변 (시퀀셜):** ① 도메인 매칭·② 패턴DB/진보 원칙 로딩·③-b UX_CHECKLIST·④ HTML 최종 통합·Lorem/John Doe 차단 검증.
+
+**병렬 타겟:** ② 매트릭스 4행(온보딩·코어루프·수익화·리텐션)·③ 5화면 기능 명세·④ 5화면 HTML 블록.
+
+**품질 방어:** 화면 간 토큰·용어 불일치·N2/N4 위반·진보 원칙 중복·Lorem 혼입 → 재드래프트·시퀀셜 복귀. 상세 → `forbidden.md §6`·`qc.md §6`.
+
+**예상 단축:** 45~60%.
+
 
 ## Gotchas
 
 | 함정 | 대응 |
 |------|------|
-| 도메인 2개+ 걸침 (예: 펫+이커머스) | 1차 도메인 선정 후 2차 도메인 패턴을 크로스도메인으로 추가 적용 |
-| "완전히 새로운 분야" | 가장 유사한 도메인 2개 교차 적용 + 크로스도메인 패턴 15개 중 선택 |
-| HTML이 너무 단순 | 5개 화면 × 탭 전환은 최소. 상세 인터랙션(모달, 토스트, 슬라이드)도 포함 |
-| 비즈모델 미정 | 도메인 패턴에서 가장 흔한 모델 1순위 적용 + 대안 2순위 병기 |
-| 기존 앱 클론 요청 | 패턴은 참조하되, 진보 원칙 2개+ 반드시 적용. "이미 있는 거 그대로" = FAIL |
-| references 미로딩 | ②단계 시작 전 domain-patterns.md + beyond-patterns.md 로딩 확인. 미로딩 = FAIL |
-| 한글 더미데이터 누락 | Lorem ipsum, John Doe 금지. 도메인에 맞는 한글 실명/실데이터 사용 |
-| UX_CHECKLIST 스킵 후 HTML 산출 | ③-b 게이트 미통과 산출물 = FAIL. 패턴 복제품으로 전락. 허브 §F로 1회 자가점검 최소 |
-| 도메인 용어 혼입 실패 (N2 위반) | "상품1·카테고리A" 같은 제네릭 라벨 = N2 FAIL. 해당 도메인 실어휘로 대체 |
+| 도메인 2+ 걸침 | 1차 확정 후 2차 크로스 적용 |
+| 기존 앱 클론 요청 | 진보 원칙 2+ 필수 |
+| references 미로딩 | ② 전 로딩 확인 = FAIL |
+| 한글 더미 누락 (Lorem·John Doe) | 도메인 실어휘 강제 |
+| UX_CHECKLIST 스킵 후 HTML | ③-b 게이트 미통과 = FAIL |
+
+**세부 금지·대응:** → `references/forbidden.md`
+
+
+---
+
+## Version
+
+- v1.1 (2026-04-23) — html-skill-refactor spine 적용. 4블록 인덱스(tokens·snippets·forbidden·qc) 추가, 기존 3 스포크 유지(허브 특성상 풀스펙 분산). `## 4블록 참조 구조` 섹션 신설
+- v1.0 — 초기
