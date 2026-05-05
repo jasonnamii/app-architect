@@ -2,11 +2,12 @@
 name: app-architect
 description: |
   App Architect v1.1. 도메인→패턴매칭→설계→UX_CHECKLIST→와이어프레임HTML. 28도메인×190+앱 패턴DB. 일반/TURBO 2모드.
-  P1: 앱설계, 앱기획, 앱아키텍트, 플랫폼설계, 서비스설계, 앱목업, 와이어프레임, 화면설계, 앱빌더, 서비스기획, 터보앱설계, TURBO.
-  P2: 설계해줘, 목업만들어줘, design app, build mockup.
-  P3: app architecture, wireframe, service blueprint, turbo design.
-  P5: .html로, .md로, 와이어프레임으로.
-  NOT: 단일화면UI(→ui-action-designer), 사업전략(→biz-skill), BP(→bp-guide), 재무(→financial-model), 디자인(→design-skill).
+    P1: 앱설계, 앱기획, 앱아키텍트, app architect, 플랫폼설계, 서비스설계, 앱목업, 와이어프레임, 화면설계, 앱빌더, 서비스기획, 터보앱설계, TURBO, 앱구조, 서비스구조, 앱플로우, 화면흐름, UX설계, 앱디자인, 서비스디자인, 모바일앱설계, 웹앱설계, 플랫폼기획, 앱스펙, 화면기획서.
+    P2: 설계해줘, 목업만들어줘, 앱 만들어줘, 서비스 구조 잡아줘, design app, build mockup, wireframe 만들어줘, 앱 기획해줘.
+    P3: app architecture, wireframe, service blueprint, turbo design, mobile app design, UX flow.
+    P4: 앱·서비스 초기 설계시, 와이어프레임 필요시, 서비스 구조 재설계시.
+    P5: .html로, .md로, 와이어프레임으로.
+    NOT: 단일화면UI(→ui-designer), 사업전략(→biz-skill), BP(→bp-guide), 재무(→financial-model), 디자인시각화(→apple-canvas).
 "@uses":
   - references/tokens.md
   - references/snippets.md
