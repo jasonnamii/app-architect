@@ -21,9 +21,30 @@ description: |
 
 앱설계·앱기획·앱아키텍트·플랫폼설계·서비스설계·앱목업·화면설계·앱빌더·서비스기획·터보앱설계 — 도메인 패턴 매칭 기반 와이어프레임 빌더.
 
+
+## Skill Boundaries
+
+- **하는 것** — App Architect v1.1.
+- **안 하는 것** — 단일화면UI(→ui-designer), 사업전략(→biz-skill), BP(→bp-guide), 재무(→financial-model), 디자인시각화(→apple-canvas).
+
 사업방향 입력 → 도메인 패턴 매칭 → 기존을 초월하는 서비스 설계 → 와이어프레임 HTML 산출.
 
 ---
+
+## When to Use
+
+- 사용자가 "설계해줘", "목업만들어줘", "앱 만들어줘", "서비스 구조 잡아줘", "design app" 같은 표현으로 발동
+- 앱·서비스 초기 설계시, 와이어프레임 필요시, 서비스 구조 재설계시.
+- **안 쓸 때** — 단일화면UI(→ui-designer), 사업전략(→biz-skill), BP(→bp-guide), 재무(→financial-model), 디자인시각화(→apple-canvas).
+
+
+## Prerequisites
+
+| # | 체크 | 미충족 시 |
+|---|------|-----------|
+| 1 | 대상·입력 명확 (스킬 발동 의도 확인) | 1줄 확인 후 진입 |
+| 2 | references/ 폴더 접근 가능 | inline fallback |
+
 
 ## 4블록 참조 구조
 
@@ -244,7 +265,38 @@ C. "~문제를 해결하는 앱" → 문제→도메인 추론. 가장 가까운
 
 ---
 
-## Gotchas
+## Output Path
+
+| 산출물 | 경로 |
+|---|---|
+| 주 산출물 | `mnt/outputs/app-architect_{topic}_{YYYY-MM-DD}.md` |
+| 형식 | .html로, .md로, 와이어프레임으로. |
+| 리서치 결과 (해당 시) | `{VAULT}/_skills research/app-architect/{YYYY-MM-DD}_{topic}.md` |
+
+## Reference Index
+
+| 파일 | 내용 | 언제 |
+|---|---|---|
+| `references/beyond-patterns.md` | beyond patterns | 해당 단계 진입 시 |
+| `references/domain-patterns.md` | domain patterns | 해당 단계 진입 시 |
+| `references/forbidden.md` | forbidden | 해당 단계 진입 시 |
+| `references/qc.md` | qc | 해당 단계 진입 시 |
+| `references/snippets.md` | snippets | 해당 단계 진입 시 |
+| `references/tokens.md` | tokens | 해당 단계 진입 시 |
+| `references/ux-principles.md` | ux principles | 해당 단계 진입 시 |
+
+
+## Next Phase
+
+본 스킬 작업 후 자연스럽게 이어지는 흐름:
+
+- 후속 작업 → `ui-designer`
+- 후속 작업 → `biz-skill`
+- 후속 작업 → `bp-guide`
+- 후속 작업 → `financial-model`
+- 후속 작업 → `apple-canvas`
+
+## Failure Modes (Gotchas)
 
 | 함정 | 대응 |
 |------|------|
@@ -258,6 +310,14 @@ C. "~문제를 해결하는 앱" → 문제→도메인 추론. 가장 가까운
 
 
 ---
+
+
+## ❌ WRONG vs ✅ CORRECT
+
+```
+❌ WRONG: 트리거 단어만 보고 발동 — 본질·범위 확인 ✗ → 오발동·범위 이탈
+✅ CORRECT: Skill Boundaries·When to Use 확인 후 발동 → 본질 작업만 수행
+```
 
 ## Version
 
